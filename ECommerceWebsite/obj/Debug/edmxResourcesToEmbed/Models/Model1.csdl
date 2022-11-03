@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Invoicetable">
+    <Key>
+      <PropertyRef Name="inid" />
+    </Key>
+    <Property Name="inid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="infkuser" Type="Int32" />
+    <Property Name="indate" Type="DateTime" Precision="3" />
+    <Property Name="intotalbill" Type="Double" />
+    <NavigationProperty Name="ProductTable" Relationship="Self.FK__Invoiceta__infku__60A75C0F" FromRole="Invoicetable" ToRole="ProductTable" />
+    <NavigationProperty Name="Ordertables" Relationship="Self.FK__Ordertabl__Order__656C112C" FromRole="Invoicetable" ToRole="Ordertable" />
+  </EntityType>
+  <EntityType Name="Ordertable">
+    <Key>
+      <PropertyRef Name="Orderid" />
+    </Key>
+    <Property Name="Orderid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderFkProduct" Type="Int32" />
+    <Property Name="OrderFkuser" Type="Int32" />
+    <Property Name="OrderFkinvoice" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="Orderquantity" Type="Int32" />
+    <Property Name="Orderbill" Type="Double" />
+    <Property Name="Orderunitprice" Type="Int32" />
+    <NavigationProperty Name="Invoicetable" Relationship="Self.FK__Ordertabl__Order__656C112C" FromRole="Ordertable" ToRole="Invoicetable" />
+    <NavigationProperty Name="ProductTable" Relationship="Self.FK__Ordertabl__Order__6383C8BA" FromRole="Ordertable" ToRole="ProductTable" />
+    <NavigationProperty Name="Usertable" Relationship="Self.FK__Ordertabl__Order__6477ECF3" FromRole="Ordertable" ToRole="Usertable" />
+  </EntityType>
+  <EntityType Name="ProductTable">
+    <Key>
+      <PropertyRef Name="prodid" />
+    </Key>
+    <Property Name="prodid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="productprice" Type="Double" />
+    <Property Name="productdisc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="productimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Invoicetables" Relationship="Self.FK__Invoiceta__infku__60A75C0F" FromRole="ProductTable" ToRole="Invoicetable" />
+    <NavigationProperty Name="Ordertables" Relationship="Self.FK__Ordertabl__Order__6383C8BA" FromRole="ProductTable" ToRole="Ordertable" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usertable">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="usercontact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ordertables" Relationship="Self.FK__Ordertabl__Order__6477ECF3" FromRole="Usertable" ToRole="Ordertable" />
+  </EntityType>
+  <Association Name="FK__Invoiceta__infku__60A75C0F">
+    <End Role="ProductTable" Type="Self.ProductTable" Multiplicity="0..1" />
+    <End Role="Invoicetable" Type="Self.Invoicetable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTable">
+        <PropertyRef Name="prodid" />
+      </Principal>
+      <Dependent Role="Invoicetable">
+        <PropertyRef Name="infkuser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordertabl__Order__656C112C">
+    <End Role="Invoicetable" Type="Self.Invoicetable" Multiplicity="0..1" />
+    <End Role="Ordertable" Type="Self.Ordertable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoicetable">
+        <PropertyRef Name="inid" />
+      </Principal>
+      <Dependent Role="Ordertable">
+        <PropertyRef Name="OrderFkinvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordertabl__Order__6383C8BA">
+    <End Role="ProductTable" Type="Self.ProductTable" Multiplicity="0..1" />
+    <End Role="Ordertable" Type="Self.Ordertable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTable">
+        <PropertyRef Name="prodid" />
+      </Principal>
+      <Dependent Role="Ordertable">
+        <PropertyRef Name="OrderFkProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordertabl__Order__6477ECF3">
+    <End Role="Usertable" Type="Self.Usertable" Multiplicity="0..1" />
+    <End Role="Ordertable" Type="Self.Ordertable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usertable">
+        <PropertyRef Name="userid" />
+      </Principal>
+      <Dependent Role="Ordertable">
+        <PropertyRef Name="OrderFkuser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EcommerceEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Invoicetables" EntityType="Self.Invoicetable" />
+    <EntitySet Name="Ordertables" EntityType="Self.Ordertable" />
+    <EntitySet Name="ProductTables" EntityType="Self.ProductTable" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Usertables" EntityType="Self.Usertable" />
+    <AssociationSet Name="FK__Invoiceta__infku__60A75C0F" Association="Self.FK__Invoiceta__infku__60A75C0F">
+      <End Role="ProductTable" EntitySet="ProductTables" />
+      <End Role="Invoicetable" EntitySet="Invoicetables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordertabl__Order__656C112C" Association="Self.FK__Ordertabl__Order__656C112C">
+      <End Role="Invoicetable" EntitySet="Invoicetables" />
+      <End Role="Ordertable" EntitySet="Ordertables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordertabl__Order__6383C8BA" Association="Self.FK__Ordertabl__Order__6383C8BA">
+      <End Role="ProductTable" EntitySet="ProductTables" />
+      <End Role="Ordertable" EntitySet="Ordertables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordertabl__Order__6477ECF3" Association="Self.FK__Ordertabl__Order__6477ECF3">
+      <End Role="Usertable" EntitySet="Usertables" />
+      <End Role="Ordertable" EntitySet="Ordertables" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

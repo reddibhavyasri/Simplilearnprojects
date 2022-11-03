@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd779db4f74240048fc48cb165ea5a22" Name="Diagram1">
+        <EntityTypeShape EntityType="EcommerceModel.Invoicetable" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Ordertable" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.ProductTable" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Usertable" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="EcommerceModel.FK__Invoiceta__infku__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Ordertabl__Order__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Ordertabl__Order__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK__Ordertabl__Order__6477ECF3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

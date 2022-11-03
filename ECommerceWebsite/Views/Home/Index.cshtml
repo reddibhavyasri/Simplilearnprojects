@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ECommerceWebsite.Models.ProductTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class=" container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class=" col-mid-4">
+                <img style=" min-height:200px;width:100px" src="~/Content/Uploads/Fruits.jpg" />
+
+
+
+
+                <h4 style="text-align:center">
+                    @item.productname
+                </h4>
+                <h5 style=" text-align:center">
+                    @item.productprice
+                </h5>
+                <a class="  btn btn-danger" href="#"> Add to Cart</a>
+            </div>
+
+        }
+        @foreach (var item in Model)
+        {
+            
+
+                <div class=" col-mid-4">
+                    <img style=" min-height:200px;width:100px" src="~/Content/Uploads/Cake6.jpg" />
+
+
+
+                  <h4 style="text-align:center">
+                      @item.productname
+                      </h4>
+                      <h5 style=" text-align:center">
+                          @item.productprice
+                      </h5>
+                      <a class="  btn btn-danger" href="#"> Add to Cart</a>
+                   </div>
+                  
+        }
+        @foreach (var item in Model)
+        {
+
+            <div class=" col-mid-4">
+                <img style=" min-height:200px;width:100px" src="~/Content/Uploads/Drink.jpg" />
+
+
+
+
+                <h4 style="text-align:center">
+                    @item.productname
+                </h4>
+                <h5 style=" text-align:center">
+                    @item.productprice
+                </h5>
+                <a class="  btn btn-danger" href="#"> Add to Cart</a>
+            </div>
+        }
+        @foreach (var item in Model)
+        {
+
+            <div class=" col-mid-4">
+                <img style=" min-height:200px;width:100px" src="~/Content/Uploads/Biscuits.jpeg" />
+
+
+
+
+                <h4 style="text-align:center">
+                    @item.productname
+                </h4>
+                <h5 style=" text-align:center">
+                    @item.productprice
+                </h5>
+                <a class="  btn btn-danger" href="#"> Add to Cart</a>
+            </div>
+        }
+
+
+        </div>
+</div>
+
+
+
+
+
