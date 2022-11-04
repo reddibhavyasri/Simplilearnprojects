@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mysqldatabase123456Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CustLogInfoTable4">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="Int32" Nullable="false" />
+    <Property Name="CustEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LogStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Userid" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserInfoTableData" Relationship="Self.FK_UserInfoTableData_CustLogInfoTable4" FromRole="CustLogInfoTable4" ToRole="UserInfoTableData" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserInfoTableData">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CustLogInfoTable4" Relationship="Self.FK_UserInfoTableData_CustLogInfoTable4" FromRole="UserInfoTableData" ToRole="CustLogInfoTable4" />
+  </EntityType>
+  <Association Name="FK_UserInfoTableData_CustLogInfoTable4">
+    <End Role="UserInfoTableData" Type="Self.UserInfoTableData" Multiplicity="1" />
+    <End Role="CustLogInfoTable4" Type="Self.CustLogInfoTable4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfoTableData">
+        <PropertyRef Name="Userid" />
+      </Principal>
+      <Dependent Role="CustLogInfoTable4">
+        <PropertyRef Name="Userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mysqldatabase123456Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CustLogInfoTable4" EntityType="Self.CustLogInfoTable4" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UserInfoTableDatas" EntityType="Self.UserInfoTableData" />
+    <AssociationSet Name="FK_UserInfoTableData_CustLogInfoTable4" Association="Self.FK_UserInfoTableData_CustLogInfoTable4">
+      <End Role="UserInfoTableData" EntitySet="UserInfoTableDatas" />
+      <End Role="CustLogInfoTable4" EntitySet="CustLogInfoTable4" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,2 @@
+D:\git\Simplilearnprojects\DAL\obj\Debug\BALecommerce.dll
+D:\git\Simplilearnprojects\DAL\obj\Debug\BALecommerce.pdb

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mysqldatabase123456Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CustLogInfoTable4">
+    <Key>
+      <PropertyRef Name="Logid" />
+    </Key>
+    <Property Name="Logid" Type="int" Nullable="false" />
+    <Property Name="CustEmail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LogStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Userid" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserInfoTableData">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UserInfoTableData_CustLogInfoTable4">
+    <End Role="UserInfoTableData" Type="Self.UserInfoTableData" Multiplicity="1" />
+    <End Role="CustLogInfoTable4" Type="Self.CustLogInfoTable4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfoTableData">
+        <PropertyRef Name="Userid" />
+      </Principal>
+      <Dependent Role="CustLogInfoTable4">
+        <PropertyRef Name="Userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mysqldatabase123456ModelStoreContainer">
+    <EntitySet Name="CustLogInfoTable4" EntityType="Self.CustLogInfoTable4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfoTableData" EntityType="Self.UserInfoTableData" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_UserInfoTableData_CustLogInfoTable4" Association="Self.FK_UserInfoTableData_CustLogInfoTable4">
+      <End Role="UserInfoTableData" EntitySet="UserInfoTableData" />
+      <End Role="CustLogInfoTable4" EntitySet="CustLogInfoTable4" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+F:\practice\Training recordings\DALEmp\bin\Debug\DALEmp.dll.config
+F:\practice\Training recordings\DALEmp\bin\Debug\DALEmp.dll
+F:\practice\Training recordings\DALEmp\bin\Debug\DALEmp.pdb
+F:\practice\Training recordings\DALEmp\bin\Debug\EntityFramework.dll
+F:\practice\Training recordings\DALEmp\bin\Debug\EntityFramework.SqlServer.dll
+F:\practice\Training recordings\DALEmp\bin\Debug\EntityFramework.xml
+F:\practice\Training recordings\DALEmp\bin\Debug\EntityFramework.SqlServer.xml
+F:\practice\Training recordings\DALEmp\obj\Debug\DALEmp.csproj.AssemblyReference.cache
+F:\practice\Training recordings\DALEmp\obj\Debug\DALEmp.csproj.CoreCompileInputs.cache
+F:\practice\Training recordings\DALEmp\obj\Debug\DALEmp.csproj.CopyComplete
+F:\practice\Training recordings\DALEmp\obj\Debug\DALEmp.dll
+F:\practice\Training recordings\DALEmp\obj\Debug\DALEmp.pdb
