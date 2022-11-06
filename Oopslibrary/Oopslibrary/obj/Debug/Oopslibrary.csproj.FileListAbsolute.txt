@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Oopslibrary\bin\Debug\Oopslibrary.dll
+C:\Users\User\source\repos\Oopslibrary\bin\Debug\Oopslibrary.pdb
+C:\Users\User\source\repos\Oopslibrary\obj\Debug\Oopslibrary.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Oopslibrary\obj\Debug\Oopslibrary.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Oopslibrary\obj\Debug\Oopslibrary.dll
+C:\Users\User\source\repos\Oopslibrary\obj\Debug\Oopslibrary.pdb

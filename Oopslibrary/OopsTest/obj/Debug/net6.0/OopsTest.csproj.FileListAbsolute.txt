@@ -1,0 +1,15 @@
+C:\Users\toshiba\source\repos\Projects\OopsTest\bin\Debug\net6.0\OopsTest.deps.json
+C:\Users\toshiba\source\repos\Projects\OopsTest\bin\Debug\net6.0\OopsTest.dll
+C:\Users\toshiba\source\repos\Projects\OopsTest\bin\Debug\net6.0\OopsTest.pdb
+C:\Users\toshiba\source\repos\Projects\OopsTest\bin\Debug\net6.0\Oopslibrary.dll
+C:\Users\toshiba\source\repos\Projects\OopsTest\bin\Debug\net6.0\Oopslibrary.pdb
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.csproj.AssemblyReference.cache
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.AssemblyInfoInputs.cache
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.AssemblyInfo.cs
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.csproj.CoreCompileInputs.cache
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.csproj.CopyComplete
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.dll
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\refint\OopsTest.dll
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\OopsTest.pdb
+C:\Users\toshiba\source\repos\Projects\OopsTest\obj\Debug\net6.0\ref\OopsTest.dll
